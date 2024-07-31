@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form_area">
+        <p class="title">SIGN UP</p>
+        <form action="/user/signup" method="POST">
+          <div class="form_group">
+            <label class="sub_title" for="name">Name</label>
+            <input
+              placeholder="Enter your full name"
+              class="form_style"
+              type="text"
+              name="name"
+              id="name"
+              required
+            />
+          </div>
+          <div class="form_group">
+            <label class="sub_title" for="name">Age</label>
+            <input
+              placeholder="Enter your Age"
+              class="form_style"
+              type="text"
+              name="age"
+              id="age"
+              autocomplete="bday"
+              required
+            />
+          </div>
+          <div class="form_group">
+            <label class="sub_title" for="aadharNumber">Aadhar Number</label>
+            <input
+              placeholder="Enter your Aadhar Number"
+              id="aadharNumber"
+              class="form_style"
+              type="aadharNumber"
+              name="aadharNumber"
+              autocomplete="name"
+              required
+            />
+            <% if (locals.aadhar_error) { %>
+            <p id="error"><%= locals.aadhar_error %></p>
+            <% } %>
+          </div>
+
+          <div class="form_group">
+            <label class="sub_title" for="password">Password</label>
+            <input
+              placeholder="Enter your password"
+              id="password"
+              class="form_style"
+              type="password"
+              name="password"
+              autocomplete="new-password"
+              required
+            />
+          </div>
+          <div class="form_group">
+            <label class="sub_title" for="role">Role:</label>
+            <select id="role" name="role" class="form_style" required>
+              <option value="voter" selected>Voter</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="form_group" id="secretKeyGroup" style="display: none">
+            <label for="secretKey">Secret Key:</label>
+            <input
+              type="text"
+              id="secretKey"
+              name="secretKey"
+              class="form_style"
+              style="display: none"
+            />
+            <% if (locals.secretKey_error) { %>
+            <p id="error"><%= locals.secretKey_error %></p>
+            <% } %>
+          </div>
+          <div>
+            <button class="btn">SIGN UP</button>
+            <p>
+              Have an Account? <a class="link" href="/login">Login Here!</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementById("role").addEventListener("change", function () {
+        const secretKeyLabel = document.getElementById("secretKeyGroup");
+        const secretKeyInput = document.getElementById("secretKey");
+        if (this.value === "admin") {
+          secretKeyLabel.style.display = "block";
+          secretKeyInput.style.display = "block";
+          secretKeyInput.setAttribute("required", "required");
+        } else {
+          secretKeyLabel.style.display = "none";
+          secretKeyInput.style.display = "none";
+          secretKeyInput.removeAttribute("required");
+        }
+      });
+    </script>
+  </body>
+</html>

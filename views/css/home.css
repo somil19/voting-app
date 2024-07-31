@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #09334e;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: #041726;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 90%;
+  width: 600px;
+}
+
+h1 {
+  color: #e66533;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #fff;
+}
+
+p {
+  color: #d59714;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.election-image {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the container without stretching */
+}
+
+.vote-button span {
+  font-size: 22px;
+}
+
+.vote-button {
+  --color: #00a97f;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+  width: 200px;
+  text-decoration: none;
+}
+
+.vote-button::before,
+.vote-button::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.vote-button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.vote-button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.vote-button:hover::before,
+.vote-button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.vote-button:hover {
+  color: rgb(10, 25, 30);
+}
+
+.vote-button:active {
+  filter: brightness(0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .vote-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .vote-button {
+    font-size: 15px;
+    padding: 0.6em 1.2em;
+  }
+}

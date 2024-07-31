@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/adminPanel.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="hero-section">
+      <div class="container">
+        <div
+          class="hero-content flex flex-col md:flex-row justify-between items-center"
+        >
+          <div class="hero-text">
+            <h2>Election Commission of World</h2>
+            <p>
+              Empowering democracies worldwide through transparent and
+              accountable elections.
+            </p>
+            <button>
+              <a href="/livePoll" style="text-decoration: none"
+                >See Live Voting🔴</a
+              >
+            </button>
+          </div>
+          <div class="hero-image">
+            <img src="/images/admin.png" alt="Hero Image" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cards" id="cards">
+      <div class="card" onclick="location.href='/listcandiates'">
+        <a class="card-title">List of Candidates</a>
+
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="location.href='/admin/addCandidate'">
+        <a class="card-title">Add Candidate</a>
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="location.href='/admin/deleteCandidate'">
+        <a class="card-title">Delete Candidate</a>
+
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
+      </div>
+
+      <div
+        class="card"
+        onclick="location.href='/admin/updateCandidate/valid?' "
+      >
+        <a class="card-title">Update Candidate</a>
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

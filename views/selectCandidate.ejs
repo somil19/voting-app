@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Candidate</title>
+    <link rel="stylesheet" href="/css/selectCandidate.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Select Your Candidate</h1>
+      <div class="card-container">
+        <% if (locals.candidates) { %> <% candidates.forEach(cand => { %>
+        <div class="card">
+          <img class="candidate-image" src="<%= cand.imageUrl %>" alt="" />
+          <h2><%= cand.name %></h2>
+          <p>Country: <%= cand.country %></p>
+          <form action="/user/vote" method="POST">
+            <input type="hidden" name="candidateId" value="<%= cand._id %>" />
+            <% if (locals.user) { %>
+            <input type="hidden" name="userAadhar" value="<%= user.aadhar %>" />
+            <% } %>
+            <button
+              class="btn-class-name"
+              type="submit"
+              onclick="changeColor(this)"
+            >
+              <span class="back"></span>
+              <span class="front"></span>
+              Vote
+            </button>
+          </form>
+        </div>
+        <% }) %> <% } %>
+      </div>
+    </div>
+
+    <script>
+      function changeColor(button) {
+        button.classList.add("green");
+      }
+    </script>
+  </body>
+</html>

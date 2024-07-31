@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Candidates</title>
+    <link rel="stylesheet" href="/css/candidates.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back">
+        <button class="back-btn"><a href="/adminPanel">← Back</a></button>
+      </div>
+
+      <h1>List of Candidates</h1>
+      <table class="candidates-table">
+        <thead>
+          <tr>
+            <th>PROFILE</th>
+            <th>NAME</th>
+            <th>COUNTRY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (locals.candidates) { %> <% candidates.forEach(candidate => { %>
+          <tr>
+            <td>
+              <% if (candidate.imageUrl) { %>
+              <img
+                src="<%= candidate.imageUrl %>"
+                alt="<%= candidate.name %>"
+              />
+              <% } else { %>
+              <p>No Image Available</p>
+              <% } %>
+            </td>
+            <td><%= candidate.name %></td>
+            <td><%= candidate.country %></td>
+          </tr>
+          <% }) %> <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

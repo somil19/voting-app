@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Voting</title>
+    <link rel="stylesheet" href="/css/live-voting.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back">
+        <button class="back-btn"><a href="/adminPanel">← Back</a></button>
+      </div>
+      <h1 class="title">Live🔴 Voting Results</h1>
+      <div class="leaderboard">
+        <h2>Leaderboard</h2>
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Candidate Name</th>
+              <th>Country</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (sortedCandidates.length > 0) { %> <%
+            sortedCandidates.forEach(cand => { %>
+            <tr>
+              <td><%= cand.name %></td>
+              <td><%= cand.country %></td>
+              <td><%= cand.votes %></td>
+            </tr>
+            <% }) %> <% } else { %>
+            <tr>
+              <td colspan="3">No candidates yet.</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="voting-info">
+        <h2>Voter Information</h2>
+        <table class="voter-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>UserId</th>
+              <th>Voted At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (users.length > 0) { %> <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user._id %></td>
+              <td><%= user.votedAt.toDateString() %></td>
+            </tr>
+            <% }) %> <% } else { %>
+            <tr>
+              <td colspan="3">No voters yet.</td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

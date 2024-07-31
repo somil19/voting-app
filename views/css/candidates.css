@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #031d44;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  color: #f2e8cf;
+  margin-bottom: 20px;
+}
+
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.candidates-table thead tr {
+  background-color: #de5499;
+  color: #f2e8cf;
+  text-align: center;
+}
+
+.candidates-table th,
+.candidates-table td {
+  padding: 12px 13px;
+  text-align: center;
+  vertical-align: middle;
+}
+.candidates-table td {
+  color: white;
+}
+
+.candidates-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background-color: #1a659e;
+}
+
+.candidates-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+.candidates-table tbody tr:nth-of-type(even) td {
+  color: #264143; /* Ensures text color is applied to table data cells */
+}
+.candidates-table tbody tr:last-of-type {
+  border-bottom: 2px solid #264143;
+}
+
+.candidates-table img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.candidates-table p {
+  color: #fff;
+  font-style: italic;
+}
+.back {
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+  margin-left: 10px;
+}
+.back-btn {
+  padding: 15px 30px;
+  border: 2px solid #2c2c2c;
+
+  background-color: #0077b6;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+
+  font-weight: bold;
+}
+.back-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.back-btn:hover {
+  border-color: #f2e8cf;
+  background: #292929;
+}

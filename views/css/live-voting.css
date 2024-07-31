@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #031d44;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #f2e8cf;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+h2 {
+  color: #f2e8cf;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.voter-table,
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.voter-table thead tr,
+.leaderboard-table thead tr {
+  background-color: #de5499;
+  color: #f2e8cf;
+  text-align: center;
+}
+
+.voter-table th,
+.leaderboard-table th,
+.voter-table td,
+.leaderboard-table td {
+  padding: 12px 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.voter-table td,
+.leaderboard-table td {
+  color: white;
+  word-break: break-word; /* Added for long text */
+}
+
+.voter-table tbody tr,
+.leaderboard-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  background-color: #1a659e;
+}
+
+.voter-table tbody tr:nth-of-type(even),
+.leaderboard-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.voter-table tbody tr:nth-of-type(even) td,
+.leaderboard-table tbody tr:nth-of-type(even) td {
+  color: #264143;
+}
+
+.voter-table tbody tr:last-of-type,
+.leaderboard-table tbody tr:last-of-type {
+  border-bottom: 2px solid #264143;
+}
+
+.voter-table p,
+.leaderboard-table p {
+  color: #fff;
+  font-style: italic;
+}
+
+.back {
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+  margin-left: 10px;
+}
+.back-btn {
+  padding: 15px 30px;
+  border: 2px solid #2c2c2c;
+  background-color: #0077b6;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  font-weight: bold;
+}
+.back-btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.back-btn:hover {
+  border-color: #f2e8cf;
+  background: #292929;
+}
+
+.voting-info,
+.leaderboard {
+  margin-top: 70px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .voter-table,
+  .leaderboard-table {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 768px) {
+  .back {
+    text-align: start;
+    margin-left: 0;
+    margin-bottom: 3rem;
+  }
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+  }
+}

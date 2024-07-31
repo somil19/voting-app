@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADD CANDIDATE</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back">
+        <button class="back-btn"><a href="/adminPanel">← Back</a></button>
+      </div>
+      <% if (locals.success) { %>
+      <div id="success-message" class="card">
+        <div class="icon-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            stroke-width="0"
+            fill="currentColor"
+            stroke="currentColor"
+            class="icon"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"
+            ></path>
+          </svg>
+        </div>
+        <div class="message-text-container">
+          <p class="message-text">Candidate added successfully!</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 15 15"
+          stroke-width="0"
+          fill="none"
+          stroke="currentColor"
+          class="cross-icon"
+          onclick="closeSuccessMessage()"
+        >
+          <path
+            fill="currentColor"
+            d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+            clip-rule="evenodd"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+      </div>
+      <% } %>
+      <div class="form_area">
+        <p class="title">Add Candidate</p>
+        <p class="sub_title">Fill the details of Candidate</p>
+        <form
+          action="/admin/addCandidate"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form_group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form_style"
+              required
+            />
+          </div>
+          <div class="form_group">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              class="form_style"
+              required
+            />
+          </div>
+          <% if (locals.country_error) { %>
+          <p id="error"><%= locals.country_error %></p>
+          <% } %>
+          <div class="form_group">
+            <label for="image">Upload Image</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              class="form_style"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Add</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    function closeSuccessMessage() {
+      document.getElementById("success-message").style.display = "none";
+    }
+  </script>
+</html>

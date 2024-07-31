@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form_area" style="margin: 100px auto">
+        <p class="title">Login</p>
+        <p class="sub_title">Enter your details to access your account.</p>
+        <form action="/user/login" method="POST">
+          <div class="form_group">
+            <% if (locals.error) { %>
+            <p id="error"><%= error %>!</p>
+            <% } %>
+            <label for="aadharNumber">Aadhar Number:</label>
+            <input
+              type="text"
+              id="aadharNumber"
+              name="aadharNumber"
+              class="form_style"
+              required
+              autocomplete="cc-number"
+            />
+          </div>
+          <div class="form_group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form_style"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <p class="link">
+          Don't have an account? <a href="/signup">Register</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

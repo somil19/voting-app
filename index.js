@@ -14,7 +14,7 @@ const { connectMongoDb } = require("./connection");
 const { jwtAuthMiddleware } = require("./jwt");
 
 //connecting to mongodb
-connectMongoDb(process.env.MONGODB_URL)
+connectMongoDb(process.env.MONGODB_URI)
   .then(() => {
     console.log("connected to mongodb");
   })
@@ -35,5 +35,5 @@ app.use("/image", express.static("views/images"));
 
 app.use("/uploads", express.static("uploads"));
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} , ${new Date()} `);
+  console.log(`Server running on port, ${new Date()} `);
 });

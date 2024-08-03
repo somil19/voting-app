@@ -50,7 +50,7 @@
       <% } %>
       <div class="form_area">
         <p class="title">Update Candidate</p>
-        <p class="sub_title">Enter Candiate details to update Candiate.</p>
+        <p class="sub_title">Fill the details to update</p>
         <% if (!locals.success) { %>
         <form action="/admin/updateCandidate/valid" method="POST">
           <div class="form_group">
@@ -126,10 +126,10 @@
             name="country"
             value="<%= candidate.country %>"
           />
-          <button type="submit" class="btn">Submit Updates</button>
           <% if (locals.error) { %>
           <p id="error"><%= locals.error %></p>
           <% } %>
+          <button type="submit" class="btn">Submit Updates</button>
         </form>
         <% } %>
       </div>

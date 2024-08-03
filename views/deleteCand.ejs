@@ -50,7 +50,8 @@
       <% } %>
       <div class="form_area">
         <p class="title">Remove Candidate</p>
-        <p class="sub_title">Enter the details to Delete Candiate.</p>
+        <p class="sub_title">Fill the details to Remove</p>
+
         <form action="/admin/deleteCandidate" method="POST">
           <div class="form_group">
             <label for="name">Candidate Name</label>
@@ -84,10 +85,10 @@
             <p id="error"><%= locals.secretKey_error %></p>
             <% } %>
           </div>
-          <button type="submit" class="btn">Delete</button>
           <% if (locals.error) { %>
           <p id="error"><%= error %></p>
           <% } %>
+          <button type="submit" class="btn">Delete</button>
         </form>
       </div>
     </div>

@@ -13,7 +13,7 @@ cloudinary.config({
 // Set up memory storage for multer
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
-
+console.log("multer is setup");
 router.post("/upload", upload.single("image"), (req, res) => {
   const stream = cloudinary.uploader.upload_stream(
     { resource_type: "image" },

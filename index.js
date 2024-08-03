@@ -44,5 +44,5 @@ app.use("/image", express.static("views/images"));
 
 app.use("/uploads", express.static("uploads"));
 app.listen(PORT, () => {
-  console.log(`Server running on port, ${new Date()} `);
+  console.log(`Server running on port${PORT}, ${new Date()} `);
 });
